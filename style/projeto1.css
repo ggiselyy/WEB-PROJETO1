@@ -1,0 +1,12 @@
+body {
+    background-image: url("tumblr1.jpg");
+    background-position: center;
+    
+}
+#frase {
+    text-align: center;
+    height: 150px;
+    width: 200px;
+    margin: 400px auto;
+    
+}
