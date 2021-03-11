@@ -7,17 +7,18 @@ div.header{
     display: flex;
     display: inline;
     align-items: center;  
-    justify-content: space-between;
 }
 
 #logo1{
     height: 35px;
     width: 23px;
     margin-top: 0.5%;
-    margin-left: 1.5%;
+    margin-left: 0.5%;
+    margin-right: 0.09%;
     display: flex;
     float: left;
     padding: 0 10px 0 0;
+
 }
 
 input {
@@ -25,29 +26,35 @@ input {
     width: 500px;
     height: 35px;
     margin-top: 0.5%;
-    margin-left: 0.5%;
+    margin-left: 0.4%;
     display: flex;
     float: left;
     border-radius: 4px;
     border-width: 0;
-    }
+    margin-right: 60%;
+}
 
 #login1, #Signup{
     width: 80px;
     height: 35px;
     margin-top: 0.5%;
-    /*margin-right: 0.5%;*/
     border-radius: 3px;
     border-width: 0px;
     font-weight: bold;
     font-size: 16px;
-    padding-left:5px;
-    justify-content: end;
+    justify-content: center;
+    margin-right: 4px;
+}
+
+#Signup{
+    margin-right: 5px;
 }
 
 #login1{
     background-color: #00cf35;
+    
 }
+
 #Signup{
     background-color: #00b8ff;
 }
@@ -58,15 +65,14 @@ input {
     justify-content: center;
     margin-top: 200px;  
     margin-left: auto;
- 
 }
 
 img.resize {
     max-width:15%;
     max-height:15%;
-  }
+}
 
-  #frase {
+#frase {
     display: flex;
     text-align: center; /*deixa o item no centro*/ 
     justify-content: center;
@@ -75,7 +81,7 @@ img.resize {
     font-size: 15pt;
     font-weight: bold;
     height: 200%;
-    width: 300px;       
+    width: 320px;       
     margin: 15px auto 0px; /** px em relação a imagem */
 }
 
@@ -102,6 +108,54 @@ img.resize {
     margin-top: 1%;
 }
 
+a.explore{
+    display: flex;
+    text-align: center; /*deixa o item no centro*/ 
+    justify-content: center;
+    color: white;
+    font-family: Arial;
+    font-size: 12pt;
+    font-weight: bold;
+    padding-top: 25px;
+    text-decoration: none;
+}
+
 div.resto{
     justify-content: center;
+}
+
+div.apps{   
+    margin-top: 100px;
+}
+div.app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img.android{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+a.android{
+    position: relative;
+    width: 155px;
+}
+
+a.ios{
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+    #logo1, #login1, #Signup, #input {
+      display: none;
+      margin-right: 60%;
+    }
+    img.resize {
+        max-width:60%;
+        max-height:60%;
+    }
+
 }
