@@ -1,6 +1,8 @@
 body {
     background-image: url("tumblr1.jpg");
     background-position: center;
+    background-size: cover;
+    justify-content: center;
 }
 
 div.header{
@@ -154,8 +156,9 @@ a.ios{
       margin-right: 60%;
     }
     div.app{
-        display: flex;
+        display: none;
         justify-content: center;
+
     }
     img.resize{
         max-width: 80%;
@@ -163,15 +166,21 @@ a.ios{
     }
     #getStarted, #login2{
         width: 80%;
-        height: 200%;
+        height: 300%;
         border-radius: 5px;
         border-width: 0;
+        font-size: 200%;
 
     }
     #frase{
-        max-width: 80%;
-        max-height: 80%;
-        font-size: 140%;
+
+        text-align: justify;
+        width:70%;
+        max-height: 100%;
+        font-size: 300%;
+        justify-content: center;
+        align-content: center;
+
     }
 
     #button-center{
@@ -182,4 +191,11 @@ a.ios{
         display:none;
     }
 
+    div.resto{
+        align-content: center;
+        text-align: center;
+        align-items: center;
+        margin-top:50%;   
+        margin-bottom: 50%;
+    }
 }
