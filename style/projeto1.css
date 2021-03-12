@@ -155,11 +155,31 @@ a.ios{
     }
     div.app{
         display: flex;
-        flex-direction: column;
+        justify-content: center;
     }
     img.resize{
         max-width: 80%;
         max-height: 80%;
+    }
+    #getStarted, #login2{
+        width: 80%;
+        height: 200%;
+        border-radius: 5px;
+        border-width: 0;
+
+    }
+    #frase{
+        max-width: 80%;
+        max-height: 80%;
+        font-size: 140%;
+    }
+
+    #button-center{
+        height: 30px;
+        padding-bottom: 20%;
+    }
+    #explore{
+        display:none;
     }
 
 }
