@@ -2,6 +2,7 @@
 <html>
     <head> 
         <link rel="stylesheet" type="text/css" href="style/projeto1.css">
+        <script type="text/javascript" src="script/script.js"></script>
     </head>
 
     <body>
@@ -15,6 +16,7 @@
                 <div id="bts">
                      <button id="login1">Log in</button>
                      <button id="Signup">Sign up</button>
+
                 </div>
              </div>
             </header>
@@ -26,8 +28,17 @@
                  Make stuff, look at stuff, talk about stuff, find your people.
             </div>
             <div id="button-center">
-                <a button id="getStarted" href="./signup.html">Get Started</a button><br>
-                <a button id="login2" href="./login.html">Log In</a button>
+
+                <form action="https://reqres.in/api/users" method="post" id="Cadastro" accept-charset="utf-8">
+                    <label for="nome">nome:</label>
+                         <input id="nomelogin" name="nome" value="Name" onclick="changeEmpty()"></input>
+                     <label for="email">email:</label>
+                        <input id="emaillogin" name="email" value= "Email"></input>
+                    <label for="senha">senha:</label>
+                        <input id="senhalogin" name="senha" value = "Password"></input>
+
+                     <button id="login2" type="submit" value="Adicionar">Sign Up</button>
+                 </form>
             </div>
 
             <div id="explore">
@@ -45,3 +56,5 @@
     </body>
        
 </html>
+
+
