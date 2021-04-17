@@ -104,17 +104,17 @@ img.resize {
 }
 #nomelogin{
     background-color: #ffffff;
-    margin-top: 0.05%;
+    margin-top: 0.5%;
 }
 
 #emaillogin{
     background-color: #ffffff;
-    margin-top: 0.05%;
+    margin-top: 0.50%;
 }
 
 #senhalogin{
     background-color: #ffffff;
-    margin-top: 0.05%;
+    margin-top: 0.5%;
     margin-bottom: 1%;
 }
 
@@ -217,4 +217,11 @@ a.ios{
         margin-top:50%;   
         margin-bottom: 50%;
     }
+    
+    #error-name{
+        color: white;
+        background-color: red;
+        visibility: visible;
+    }
+    
 }

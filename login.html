@@ -2,7 +2,8 @@
 <html>
     <head> 
         <link rel="stylesheet" type="text/css" href="style/projeto1.css">
-        <script type="text/javascript" src="script/script.js"></script>
+        <script type="text/javascript" src="script/login.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
 
     <body>
@@ -28,22 +29,23 @@
                  Make stuff, look at stuff, talk about stuff, find your people.
             </div>
             <div id="button-center">
-                <form action="https://reqres.in/api/login" method="post" id="Cadastro" accept-charset="utf-8">
-                     <input id="emaillogin" name="email"></input>
-                     <input id="senhalogin" name="senha"></input>
-                     <button id="login2" type="submit" value="Entrar">Log In</button>
+                <form id="LoginForm" action="https://reqres.in/api/login" method="POST">
+                    <div class="form-group">
+                        <label for="emaillogin"></label><span id="error-email"></span>
+                        <input id="emaillogin" name="email" placeholder= "Email"></input>
+                    </div>
+                     <div class="form-group">
+                        <label for="senhalogin"></label><span id="error-password"></span>
+                        <input id="senhalogin" name="senha" placeholder= "Senha"></input>
+                    </div>
+                    <div class="form-group">
+                         <button id="login2" type="submit" value="Entrar">Log In</button>
+                    </div>
                 </form>
             </div>
 
             <div id="explore">
                 <a class="explore" href="#aexplore">Here's what's trending</a>
-            </div>
-        </div>
-
-        <div class="apps">
-            <div class="app">
-                <a class="ios" href="#ios"><img src="style/ios.svg"><img></a>
-                <a class="android" href="#android"><img class="android" src="style/googleplay.png"></img></a>
             </div>
         </div>
 

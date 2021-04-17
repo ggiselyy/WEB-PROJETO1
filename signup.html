@@ -3,6 +3,7 @@
     <head> 
         <link rel="stylesheet" type="text/css" href="style/projeto1.css">
         <script type="text/javascript" src="script/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
 
     <body>
@@ -27,31 +28,35 @@
             <div id="frase">
                  Make stuff, look at stuff, talk about stuff, find your people.
             </div>
+
             <div id="button-center">
+                <div class="form-group">
+                    <form action="" id="Cadastro" method="post" onsubmit="return validarCampos()">
+                        <label for="nomelogin"></label><span id="error-name"></span>
+                        <input id="nomelogin" name="nome" placeholder="Name"></input>
+                </div>
 
-                <form action="https://reqres.in/api/users" method="post" id="Cadastro" accept-charset="utf-8">
-                    <label for="nome">nome:</label>
-                         <input id="nomelogin" name="nome" value="Name" onclick="changeEmpty()"></input>
-                     <label for="email">email:</label>
-                        <input id="emaillogin" name="email" value= "Email"></input>
-                    <label for="senha">senha:</label>
-                        <input id="senhalogin" name="senha" value = "Password"></input>
+                <div class="form-group"></div>
+                         <label for="emaillogin"></label><span id="error-email"></span>
+                        <input id="emaillogin" name="email" placeholder= "Email"></input>
+                </div>
 
-                     <button id="login2" type="submit" value="Adicionar">Sign Up</button>
-                 </form>
-            </div>
+                <div class="form-group"></div>
+                        <label for="senhalogin"></label><span id="error-password"></span>
+                        <input id="senhalogin" name="senha" placeholder="Password"></input>
+                </div>
+
+                <div class="form-group"></div>
+                        <button id="login2" type="submit" value="Adicionar">Sign Up</button>
+                </div>
+            </form>
+        </div>
 
             <div id="explore">
                 <a class="explore" href="#aexplore">Here's what's trending</a>
             </div>
         </div>
 
-        <div class="apps">
-            <div class="app">
-                <a class="ios" href="#ios"><img src="style/ios.svg"><img></a>
-                <a class="android" href="#android"><img class="android" src="style/googleplay.png"></img></a>
-            </div>
-        </div>
 
     </body>
        
