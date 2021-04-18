@@ -1,9 +1,10 @@
 var cadastro = document.getElementById("login2");
 
+cadastro.addEventListener('click', (e) =>{
+    e.preventDefault();
 //Validar dados de cadastro
-function validarCampos(){
+//function validarCampos(){
 
-   // var nome = $("input#nomelogin")
     var nome = document.forms["Cadastro"]["nomelogin"].value;
     var email = document.forms["Cadastro"]["emaillogin"].value;
     var senha = document.forms["Cadastro"]["senhalogin"].value;
@@ -37,19 +38,58 @@ function validarCampos(){
     if (controle == true){
         //verifica se e-mail ja esta cadastrado antes de adicionar novo registro
         if (localStorage.getItem(email) != email){
-            localStorage.setItem("Nome", nome);
-            localStorage.setItem("Email", email);
-            localStorage.setItem("Senha", password);
             alert("deu bom");
+            cadreq(email, senha)
+            alert ("deu muito bom")
+            if (cadreq){
+                localStorage.setItem("Nome", nome);
+                localStorage.setItem("Email", email);
+                localStorage.setItem("Password", senha);
+                alert("Success!!!")
+            } else {
+                alert("Fail to Register")
+            }
         } else {
-            alert("email ja cadastrado");
+            alert("Email already registered");
         }
         return true;
 
     }else {
-        alert("deu ruim")
+        alert("Fail to Register")
         return false
     }
-};
+//};
+})
 
+function cadreq(email, password){
+    alert("dentro do criar login")
+    alert(email)
+    alert(password)
+
+    $.ajax({
+        
+        url: "https://reqres.in/api/users",
+        type: "POST",
+        data: {
+            email: email,
+            password: password
+        },
+        success: function(response){
+            if (response.id != ""){
+                return true;
+
+           }else {
+                return false;
+
+           }
+        } ,
+        error: function(response){
+            alert(response.status)
+                return false;
+            
+        }
+
+    }); 
+
+}
 

@@ -1,28 +1,62 @@
-$("#LoginForm").submit(function (event) {
-    event.preventDefault();
+function validarLogin(email, password){
 
-//function validarLogin(){
+    alert("dentro do validar login")
+    alert(email)
+    alert(password)
+
     $.ajax({
+        
         url: "https://reqres.in/api/login",
-        type: POST,
+        type: "POST",
         data: {
-            email:  document.forms["LoginForm"]["emaillogin"].value,
-            senha:  document.forms["LoginForm"]["senhalogin"].value
+            email: email,
+            password: password
         },
-        alert(response);
+        success: function(response){
+            if (response.status == 200){
+                localStorage.setItem("Status", "Online");
+                return true;
+           }else {
+                localStorage.setItem("Status", "Offline");
 
-    });
-    alert(senha)
-    if (response.status == 200){
-        alert("Login Success");
-        localStorage("Status", "Online");
-        alert("deu bom");
+           }
+        } ,
+        error: function(response){
+            alert(response.status)
+                return false;
+            
+        }
 
-    }else if (response.status == 400){
-        alert(response);
-        localStorage("Status", "Offline");
-        alert("deu ruim");
+    }); 
+
+}
+var login = document.getElementById("login")
+
+login.addEventListener('click', (e) =>{
+    e.preventDefault();
+
+    alert("parte1")
+
+    var email = document.forms["LoginForm"]["emaillogin"].value;
+    var password = document.forms["LoginForm"]["senhalogin"].value;
+
+    alert("parte2")
+
+    if (email != "" && password != ""){
+        if (email == localStorage.getItem("Email")){
+            if (password == localStorage.getItem("Password")){
+                alert("entrou no if")
+                validarLogin(email, password)
+                alert("entrou no validar login")
+                return true;
+            }
+
+        } else {
+            alert("login invalido")
+            return false;
+        }
+    }else {
+        alert("Nenhum campo deve ficar em branco")
     }
 })
-
 //function ativarBusca(){};

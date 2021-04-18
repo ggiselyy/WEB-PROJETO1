@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "description": "WEB-PROJETO1",
+  "main": "script.js",
+  "dependencies": {
+    "ajax": "0.0.4",
+    "local-storage": "^2.0.0"
+  },
+  "author": "Gisely Macedo"
+}
