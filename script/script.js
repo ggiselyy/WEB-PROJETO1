@@ -46,11 +46,14 @@ cadastro.addEventListener('click', (e) =>{
                 localStorage.setItem("Email", email);
                 localStorage.setItem("Password", senha);
                 alert("Success!!!")
+                return true;
             } else {
                 alert("Fail to Register")
+                return false;
             }
         } else {
             alert("Email already registered");
+            return false;
         }
         return true;
 
