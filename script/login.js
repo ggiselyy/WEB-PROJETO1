@@ -19,6 +19,7 @@ function validarLogin(email, password){
         } ,
         error: function(response){
             alert("Fail to login")
+            localStorage.setItem("Status", "Offline");
                 return false;
             
         }

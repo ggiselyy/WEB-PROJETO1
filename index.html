@@ -2,6 +2,9 @@
 <html>
     <head> 
         <link rel="stylesheet" type="text/css" href="style/projeto1.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="node_modules/oauth-signature/dist/oauth-signature.js"></script>
+        <script type="text/javascript" src="script/buscar.js"async></script>
     </head>
 
     <body>
@@ -9,12 +12,10 @@
             <header>
               <div>
                 <div>
-                    <img id="logo1" class="resize1" src="style/tumblr-logo-t.png"></img>
-                    <input id="input" type="text" name="Search Tumblr" value="Search Tumblr"></input>
-                </div>
-                <div id="bts">
-                     <button id="login1">Log in</button>
-                     <button id="Signup">Sign up</button>
+                     <img id="logo1" class="resize1" src="style/tumblr-logo-t.png" onclick="window.location.href= './index.html'"></img>
+                     <button id="btSearch" onclick="window.location.href= './buscar.html'">Search</input>
+                     <button id="login1" onclick="window.location.href= './login.html'">Log in</button>
+                     <button id="Signup" onclick="window.location.href= './signup.html'" >Sign up</button>
                 </div>
              </div>
             </header>

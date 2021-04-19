@@ -22,20 +22,27 @@ div.header{
 
 }
 
-input {
+input, #inputSearch {
     display: flex;
     border-radius: 4px;
     border-width: 0;
 
 }
-#input {
-    opacity: 20%;
+#input, #inputSearch {
+    opacity: 40%;
     margin-top: 0.5%;
     margin-left: 0.4%;
-    margin-right: 60%;
     width: 500px;
     height: 35px;
     float: left;
+}
+
+#btSearch {
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+    margin-right: 80%;
+    height: 35px;
+    width: 70px;
 }
 
 #login1, #Signup{
@@ -47,11 +54,14 @@ input {
     font-weight: bold;
     font-size: 16px;
     justify-content: center;
-    margin-right: 4px;
+    margin-right: 2px;
+
 }
 
 #Signup{
-    margin-right: 5px;
+    margin-right: 1%;
+    margin-left:0.5%;
+
 }
 
 #login1{
@@ -104,17 +114,16 @@ img.resize {
 }
 #nomelogin{
     background-color: #ffffff;
-    margin-top: 0.5%;
+    margin-top: 0.3%;
 }
 
 #emaillogin{
     background-color: #ffffff;
-    margin-top: 0.50%;
+    margin-top: 0.20%;
 }
 
 #senhalogin{
     background-color: #ffffff;
-    margin-top: 0.5%;
     margin-bottom: 1%;
 }
 
@@ -130,7 +139,7 @@ img.resize {
 
 a.explore{
     display: flex;
-    text-align: center; /*deixa o item no centro*/ 
+    text-align: center;
     justify-content: center;
     color: white;
     font-family: Arial;
@@ -166,6 +175,20 @@ a.android{
 a.ios{
     display: flex;
     align-items: center;
+}
+#data{
+    font-size: 14;
+    background-color: honeydew;
+    size: auto;
+    background-size: auto;
+    margin-top: 2%;
+}
+#error-name, #error-email, #error-password{
+    background-color: honeydew;
+    color:red;
+    font-weight: bold;
+    margin-bottom: 1%;
+    margin-left: 45%;
 }
 
 @media only screen and (max-width: 1000px) {

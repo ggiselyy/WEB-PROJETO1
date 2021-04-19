@@ -24,7 +24,7 @@ cadastro.addEventListener('click', (e) =>{
         controle = false;
 
     }else if(senha.length < 5){
-        document.getElementById('error-password').innerHTML = "Please Enter A Valid Password (6 or more characteres)";
+        document.getElementById('error-password').innerHTML = "Minimum 6 characters";
         controle = false;
 
     }else if(email.indexOf("@") == -1){
@@ -38,9 +38,7 @@ cadastro.addEventListener('click', (e) =>{
     if (controle == true){
         //verifica se e-mail ja esta cadastrado antes de adicionar novo registro
         if (localStorage.getItem(email) != email){
-            alert("deu bom");
             cadreq(email, senha)
-            alert ("deu muito bom")
             if (cadreq){
                 localStorage.setItem("Nome", nome);
                 localStorage.setItem("Email", email);
@@ -65,9 +63,6 @@ cadastro.addEventListener('click', (e) =>{
 })
 
 function cadreq(email, password){
-    alert("dentro do criar login")
-    alert(email)
-    alert(password)
 
     $.ajax({
         
@@ -78,7 +73,7 @@ function cadreq(email, password){
             password: password
         },
         success: function(response){
-            if (response.id != ""){
+            if (response.token != ""){
                 return true;
 
            }else {
@@ -87,7 +82,6 @@ function cadreq(email, password){
            }
         } ,
         error: function(response){
-            alert(response.status)
                 return false;
             
         }
