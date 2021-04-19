@@ -205,7 +205,7 @@ a.ios{
         max-width: 80%;
         max-height: 80%;
     }
-    #getStarted, #login2, #emaillogin, #login{
+    #getStarted, #login2, #login{
         width: 80%;
         height: 300%;
         border-radius: 5px;
@@ -226,7 +226,7 @@ a.ios{
 
     #button-center{
         height: 30px;
-        padding-bottom: 20%;
+        padding-bottom: 11%;
     }
 
     #explore{
