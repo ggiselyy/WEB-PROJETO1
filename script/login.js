@@ -12,8 +12,9 @@ function validarLogin(email, password){
             
             TokenGuardado = localStorage.getItem("Token")
 
-            if (response.token == TokenGuardado){
+            if (response.token == TokenGuardado && response.token != ""){
                 localStorage.setItem("Status", "Online");
+                localStorage.setItem("Token", response.token);
                 document.getElementById('error-login').innerHTML = "Login Successfully";
                 return true;
            }else {
@@ -49,19 +50,12 @@ var login = document.getElementById("login3")
             document.getElementById('error-login').innerHTML = "Password must have 3+ characters";
             return false;
         } 
-            
-        if (email == localStorage.getItem("Email")){
-  //          if (password == localStorage.getItem("Password")){
-  //              document.getElementById('error-login').innerHTML = "Login Successfully";
-                localStorage.setItem("Status", "Online");
-                return true;
-           // }
-        }
-        else {
-                validarLogin(email, password)
-                return true;
-                
-        } 
+        
+        validarLogin(email, password)
+        window.location.href = "././buscar.html";
+        return true;
+        
+        
     }else {
         document.getElementById('error-login').innerHTML = "Please no empty fields";
         return false;
