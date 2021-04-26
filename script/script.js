@@ -40,23 +40,19 @@ cadastro.addEventListener('click', (e) =>{
         if (localStorage.getItem(email) != email){
             cadreq(email, senha)
             if (cadreq){
-                localStorage.setItem("Nome", nome);
-                localStorage.setItem("Email", email);
-                localStorage.setItem("Password", senha);
-                alert("Success!!!")
+                document.getElementById('error-register').innerHTML = "Register Successfully";
                 return true;
             } else {
-                alert("Fail to Register")
+                document.getElementById('error-register').innerHTML = "Fail To Register";
                 return false;
             }
         } else {
-            alert("Email already registered");
             return false;
         }
         return true;
 
     }else {
-        alert("Fail to Register")
+        document.getElementById('error-register').innerHTML = "Fail To Register";
         return false
     }
 //};
@@ -66,7 +62,7 @@ function cadreq(email, password){
 
     $.ajax({
         
-        url: "https://reqres.in/api/users",
+        url: "https://reqres.in/api/register",
         type: "POST",
         data: {
             email: email,
@@ -74,6 +70,7 @@ function cadreq(email, password){
         },
         success: function(response){
             if (response.token != ""){
+                localStorage.setItem("Token", response.token);
                 return true;
 
            }else {

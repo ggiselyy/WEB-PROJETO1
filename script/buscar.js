@@ -9,17 +9,17 @@ btsearch.addEventListener('click', (event) => {
 
     if (iSearch.value != ""){
         
-        if(localStorage.getItem("Status")== "Online"){
+        if(localStorage.getItem("Status") == "Online"){
             
             requestInfo();
             
 
          } else{
-             alert("Login Required");
+            document.getElementById('error-buscar').innerHTML = "Login Required";
          }
     }
     else{ 
-         alert("Please enter a word")
+        document.getElementById('error-buscar').innerHTML = "Please Enter a Word";
     }
 })
 
@@ -42,8 +42,6 @@ function requestInfo(){
             $("<p>").appendTo("#data");
                        
         })
-
-        alert("top")
 
     
 ;})

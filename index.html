@@ -5,6 +5,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="node_modules/oauth-signature/dist/oauth-signature.js"></script>
         <script type="text/javascript" src="script/buscar.js"async></script>
+        <script type="text/javascript" src="script/index.js"async></script>
+        <script type="text/javascript" src="script/login.js" async></script>
     </head>
 
     <body>
@@ -28,12 +30,29 @@
             </div>
             <div id="button-center">
                 <a button id="getStarted" href="./signup.html">Get Started</a button><br>
-                <a button id="login2" href="./login.html">Log In</a button>
+                <a button id="login2">Log In</a button>
             </div>
 
             <div id="explore">
                 <a class="explore" href="#aexplore">Here's what's trending</a>
             </div>
+        </div>
+
+        <div id="LoginDiv">
+            <form id="LoginForm"  method="POST">
+                <div class="form-group">
+                    <label for="emaillogin"></label><span id="error-email"></span>
+                    <input id="emaillogin" name="email" placeholder= "Email"></input>
+                </div>
+                 <div class="form-group">
+                    <label for="senhalogin"></label><span id="error-password"></span>
+                    <input id="senhalogin" name="senha" placeholder= "Senha"></input>
+                </div>
+                <label for="botlogin"></label><span id="error-login"></span>
+                <div class="form-group">
+                     <button id="login3" type="submit" value="Entrar">Log In</button>
+                </div>
+            </form>
         </div>
 
         <div class="apps">
