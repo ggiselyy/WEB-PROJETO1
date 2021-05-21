@@ -1,4 +1,3 @@
-$(function() {
     var cadastro = document.getElementById("login2");
     cadastro.addEventListener('click', (e) =>{
         e.preventDefault();
@@ -46,6 +45,16 @@ $(function() {
                 document.getElementById('error-register').innerHTML = "Fail To Register";
                 return false;
             }
+        //} else {
+         //   return false;
+       // }
+        //return true;
+
+    //}else {
+        //document.getElementById('error-register').innerHTML = "Fail To Register";
+       // return false
+    //}
+//};
 })
 
 
@@ -68,5 +77,5 @@ function cadreq(email, senha, nome){
         }
       });
 
-    }})
+    }
 

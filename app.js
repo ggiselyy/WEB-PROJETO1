@@ -78,7 +78,7 @@ app.get("/", (req, res) => {
     if (req.session.user && req.cookies.user_sid) {
       res.redirect("/index");
     } else {
-      res.sendFile(__dirname + "/view/index.html");
+      res.sendFile(__dirname + "/index.html");
     }
   });
   
@@ -92,10 +92,6 @@ app.get("/", (req, res) => {
     }
   });
 
-  // Rota de login - Login route
-  //app.route("/login").get(sessionChecker, (req, res) => {
-  //   res.sendFile(__dirname + "/view/login.html");
-  // });
 
   // Rota de busca - Search route
 //app.get("/buscar", async (req, res) => {
