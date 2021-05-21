@@ -17,7 +17,7 @@ const Postagem = new Schema({
   }
 });
 
-const PostagemSchema = mongoose.model("postagens", Postagem);
+const PostagemSchema = mongoose.model("Post", Postagem);
 
 module.exports = {
   persistir: function(noticia) {

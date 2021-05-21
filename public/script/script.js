@@ -1,14 +1,14 @@
-var cadastro = document.getElementById("login2");
+$(function() {
+    var cadastro = document.getElementById("login2");
+    cadastro.addEventListener('click', (e) =>{
+        e.preventDefault();
 
-cadastro.addEventListener('click', (e) =>{
-    e.preventDefault();
-//Validar dados de cadastro
-//function validarCampos(){
+    //Validar dados de cadastro
 
-    var nome = document.forms["Cadastro"]["nomelogin"].value;
-    var email = document.forms["Cadastro"]["emaillogin"].value;
-    var senha = document.forms["Cadastro"]["senhalogin"].value;
-    var controle = true;
+        let email = $("input#emaillogin").val();
+        let nome = $("input#nomelogin").val();
+        let senha = $("input#senhalogin").val();
+        var controle = true;
 
     // verifica se os dados estão corretos
     if (nome == ""){
@@ -35,10 +35,10 @@ cadastro.addEventListener('click', (e) =>{
         controle = true;
     }
 
-    if (controle == true){
-        //verifica se e-mail ja esta cadastrado antes de adicionar novo registro
-        if (localStorage.getItem(email) != email){
-            cadreq(email, senha)
+    //if (controle == true){
+    //    //verifica se e-mail ja esta cadastrado antes de adicionar novo registro
+    //    if (localStorage.getItem(email) != email){
+            cadreq(email, senha, nome)
             if (cadreq){
                 document.getElementById('error-register').innerHTML = "Register Successfully";
                 return true;
@@ -46,44 +46,27 @@ cadastro.addEventListener('click', (e) =>{
                 document.getElementById('error-register').innerHTML = "Fail To Register";
                 return false;
             }
-        } else {
-            return false;
-        }
-        return true;
-
-    }else {
-        document.getElementById('error-register').innerHTML = "Fail To Register";
-        return false
-    }
-//};
 })
 
-function cadreq(email, password){
+
+function cadreq(email, senha, nome){
+
+    let newUser = {
+        nome,
+        senha,
+        email
+      };
 
     $.ajax({
-        
-        url: "https://reqres.in/api/register",
         type: "POST",
-        data: {
-            email: email,
-            password: password
-        },
-        success: function(response){
-            if (response.token != ""){
-                localStorage.setItem("Token", response.token);
-                return true;
-
-           }else {
-                return false;
-
-           }
-        } ,
-        error: function(response){
-                return false;
-            
+        url: "/createUser",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(newUser),
+        success: function(result) {
+          document.getElementById("msg").innerHTML = result.msg;
         }
+      });
 
-    }); 
-
-}
+    }})
 
